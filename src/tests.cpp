@@ -300,7 +300,7 @@ void hist_eq(float *in, int h, int w) {
         for(int j=0;j<w;j++)
             t[(int)*(pos++)]++;
     for(int i=1;i<256;i++) t[i]+=t[i-1];
-    for(int i=0;i<256;i++) t[i]=int(t[i]*255.0/h/w+0.5);
+    for(int i=0;i<256;i++) t[i]=int(t[i]*256.0/h/w+0.5);
     pos=in;
     for(int i=0;i<h;i++)
         for(int j=0;j<w;j++) *pos++=t[(int)*pos];
